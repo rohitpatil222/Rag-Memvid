@@ -1,0 +1,24 @@
+flask
+joblib
+pickle-mixin
+# Core AI & RAG dependencies
+memvid
+ollama
+transformers
+torch
+sentence-transformers
+
+# PDF and text processing
+PyPDF2
+
+# Optional / utilities
+numpy
+ffmpeg-python
+requests
+tqdm
+flask
+ffmpeg-python
+faiss-cpu
+numpy
+ollama
+transformers

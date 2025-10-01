@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Field RAG Assistant</title>
+    <style>
+        /* ------------------- BASE STYLES ------------------- */
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --success-color: #28a745;
+            --error-color: #dc3545;
+            --border-color: #ced4da;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--secondary-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            padding: 30px;
+        }
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 15px;
+            margin-top: 0;
+            font-weight: 300;
+        }
+        h2 {
+            font-size: 1.4em;
+            color: #343a40;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* ------------------- FORM STYLES ------------------- */
+        .form-container {
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 30px;
+            background-color: #ffffff;
+        }
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+            font-size: 16px;
+        }
+        textarea:focus, input[type="text"]:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        button:hover {
+            background-color: #004085;
+            transform: translateY(-1px);
+        }
+        button[name="add_doc_action"] {
+            background-color: var(--success-color);
+        }
+        button[name="add_doc_action"]:hover {
+            background-color: #1e7e34;
+        }
+
+        /* ------------------- OUTPUT STYLES ------------------- */
+        .output-box {
+            min-height: 50px;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            line-height: 1.6;
+            white-space: pre-wrap; /* Preserves formatting and line breaks */
+            word-wrap: break-word;
+            border: 2px solid #000000;
+        }
+        .rag-answer {
+            background-color: #f0f8ff; /* Light blue background for RAG answer */
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+        }
+        .success { color: var(--success-color); font-weight: bold; }
+        .error { color: var(--error-color); font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1> RAG Assistant (Qwen2/MemVid)</h1>
+
+        {% if output %}
+        <div class="output-box {% if 'RAG Answer' in output %}rag-answer{% endif %}">
+            <p>{{ output|safe }}</p>
+        </div>
+        {% endif %}
+
+        <hr>
+
+        <div class="form-container">
+            <h2>Query Knowledge Base</h2>
+            <form method="POST" action="/">
+                <input type="text" name="query_text" placeholder="Enter your question here..." required>
+                <button type="submit" name="query_action" value="query">Ask Assistant</button>
+            </form>
+        </div>
+
+        <div class="form-container">
+            <h2>Add New Technical Documentation</h2>
+            <p style="font-size: 0.9em; color: #6c757d;">
+                **Warning:** Adding text will **stop and rebuild** the entire knowledge base index (memory.mp4).
+            </p>
+            <form method="POST" action="/">
+                <textarea name="doc_content" rows="8" placeholder="Paste new documentation, procedures, or safety alerts here." required></textarea>
+                <button type="submit" name="add_doc_action" value="add">Add Text & Update KB</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

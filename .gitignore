@@ -1,0 +1,12 @@
+# Python artifacts
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Generated RAG Artifacts (DO NOT UPLOAD THESE LARGE FILES)
+field_rag_agent/artifacts/
+*.mp4
+*.json
+memory_index.json
+memory.mp4

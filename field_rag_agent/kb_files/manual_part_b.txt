@@ -1,0 +1,1 @@
+Procedure 5.2.1: Restart Sequence. To restart the main unit, wait for the green light, then press the red reset button for 5 seconds.

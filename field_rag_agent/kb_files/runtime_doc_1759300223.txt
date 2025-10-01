@@ -1,0 +1,3 @@
+Food_Recipe
+OVERVIEW
+The Customized Dog Food Recipe Generator is a versatile tool designed to streamline the creation of personalized dog food recipes. By gathering specific information about the dog, including their breed, age, gender, dietary preferences, allergies, activity level, and favorite ingredients, the generator tailors recipes to meet their precise nutritional requirements. These recipes aim to promote the dog's health and well-being by providing a balanced and customized diet. 

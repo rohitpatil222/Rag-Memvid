@@ -1,0 +1,9 @@
+2.	Joining Report and Application :
+Page 1
+Name: Mention your Name is block Letter.
+Father’s Name: Mention your Father’s name only.
+Address: Mention your Permanent address and Present address (IF your permanent and present address is same you can write “Same as above”)
+Date of Birth: Mention your DOB as per the aadhar card (even if it is wrongly updated in Aadhar card, mention the same as per the aadhar )
+Blood Group: Mention your blood group.
+Education Qualification: Mention your highest educational qualification.
+Contact and Email ID: Mention your personal contact number and your personal Email ID 

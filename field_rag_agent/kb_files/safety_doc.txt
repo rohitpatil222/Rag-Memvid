@@ -1,1 +1,0 @@
-Safety Warning: Always disconnect power before accessing the internal capacitor bank. Failure to do so can result in serious injury or death. Capacitor bank power is stored for up to 5 minutes after shutdown.

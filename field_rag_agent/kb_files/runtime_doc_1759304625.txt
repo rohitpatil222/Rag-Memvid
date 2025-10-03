@@ -1,8 +1,0 @@
-True Teas (from Camellia sinensis)
-These are classified by their processing after harvesting: 
-White Tea: Unoxidized and minimally processed, known for its delicate flavor. 
-Green Tea: Unoxidized and processed by heating to prevent oxidation, resulting in a fresh, grassy flavor. 
-Yellow Tea: Similar to green tea but with an added step where the leaves are allowed to yellow, giving it a unique mellow taste. 
-Oolong Tea: Partially oxidized, offering a wide range of flavors from floral to woody depending on the oxidation level. 
-Black Tea: Fully oxidized, producing a darker appearance, stronger flavor, and higher caffeine content. 
-Dark Tea (including Pu-erh): A post-fermented tea that undergoes a fermentation or composting process after oxidation. Pu-erh is a type of dark tea from the Yunnan region of China. 
